@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        
+.item :hover, h1 :hover, .item img :hover, title :hover {
+            transform: scale(1.2);
+            background-color:black;
+        }
+.title :hover{
+    background-color: black;
+}
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item { 
+            width: 400px;
+            height: 400px;
+            margin-top: 50px;
+            margin-left: 50px;
+            filter: drop-shadow(25px 25px 30px #000000);
+
+
+        }
+
+        .item img  {
+        
+            width: 100%;
+            height: 100%;
+        }
+
+        .item:hover {
+            transform: scale(1.2);
+            background-color: orchid;
+        }
+
+
+    </style>
+
+
+    <title> B/W gallery </title>
+</head>
+<body style="background-color:white;">
+    <center>
+        <h1> MONO </h1>
+       
+      
+       
+       
+       
+        <div class="container">
+            <div class="item">
+                <img src="img/0.jpg" alt=""></div>
+            <div class="item">
+                <img src="img/1.jpg" alt=""></div>
+            <div class="item">
+                <img src="img/2.png" alt=""></div>
+            <div class="item">
+                <img src="img/3.jpg" alt=""></div>
+            <div class="item">
+                <img src="img/4.jpg" alt=""></div>
+            <div class="item">
+                <img src="img/5.jpg" alt=""></div>
+            <div class="item">
+                <img src="img/6.jpg" alt=""></div>
+            <div class="item">
+                <img src="img/7.jpg" alt=""></div>
+            <div class="item">
+                <img src="img/8.jpg" alt=""></div>         
+            
+        </center>
+    </div>
+
+    <script>
+
+       
+        const shuffleArray = (array) => {
+            for(let i = array.length  - 1; i > 0; i--){
+               const j = Math.floor(Math.random() * i)
+                const temp = array[i]
+               array[i] = array[j]
+               array[j] = temp
+               }
+           return array
+     }
+
+    </script>
+
+</body>
+</html>
