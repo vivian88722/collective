@@ -79,15 +79,39 @@
     <script>
 
        
-        const shuffleArray = (array) => {
-            for(let i = array.length  - 1; i > 0; i--){
-               const j = Math.floor(Math.random() * i)
-                const temp = array[i]
-               array[i] = array[j]
-               array[j] = temp
-               }
-           return array
-     }
+        const numImgs = 12;
+
+        const imgPaths = Array.from({ length: numImgs });
+
+        imgPaths.forEach((e,i) => {
+            imgPaths[i]=`img/${i}.jpg`;
+            });
+
+        console.log(imgPaths);
+
+        imgPaths.sort((a,b) => (0.5 - Math.random()) );
+
+        const makeDiv = () => document.createElement('div');
+
+        const divs = Array.from({ length: numImgs }, ()=> makeDiv());
+
+        divs.forEach(div=>div.className='item');
+ 
+        const makeImg = () => document.createElement('img');
+
+        const imgs = Array.from({ length: numImgs }, ()=>makeImg());
+        
+        imgs.forEach((img, i) => img.src=imgPaths[i]);
+
+        const container = document.querySelector('.container');
+
+        divs.forEach((div, i)=>{
+            div.appendChild(imgs[i]);
+            container.appendChild(div);
+            
+        })
+
+    
 
     </script>
 
