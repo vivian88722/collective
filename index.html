@@ -79,39 +79,42 @@
     <script>
 
        
-        const numImgs = 9;
-
-        const imgPaths = Array.from({ length: numImgs });
-
-        imgPaths.forEach((e,i) => {
-            imgPaths[i]=`img/${i}.jpg`;
-            });
-
-        console.log(imgPaths);
-
-        imgPaths.sort((a,b) => (0.5 - Math.random()) );
-
-        const makeDiv = () => document.createElement('div');
-
-        const divs = Array.from({ length: numImgs }, ()=> makeDiv());
-
-        divs.forEach(div=>div.className='item');
- 
-        const makeImg = () => document.createElement('img');
-
-        const imgs = Array.from({ length: numImgs }, ()=>makeImg());
         
+  const numImgs = 9;
+        const imgPaths = Array.from({ length: numImgs });
+       
+        imgPaths.forEach((e,i) => {
+            imgPaths[i]=`${i+1}.png`;
+            });
+            
+        console.log(imgPaths);
+       
+        imgPaths.sort((a,b) => (0.5 - Math.random()) );
+       
+        //now create our divs
+        const makeDiv = () => document.createElement('div');
+        const divs = Array.from({ length: numImgs }, ()=> makeDiv());
+        divs.forEach(div=>div.className='item');
+        
+        //create our img tags and add one image path to each one
+        const makeImg = () => document.createElement('img');
+        const imgs = Array.from({ length: numImgs }, ()=>makeImg());
         imgs.forEach((img, i) => img.src=imgPaths[i]);
-
+    
+        //let's grab a reference to the container
         const container = document.querySelector('.container');
-
+        //now let's add all these parts together
+        
+        
         divs.forEach((div, i)=>{
-            div.appendChild(imgs[i]);
+            var x = document.createElement("a");
+            x.setAttribute ("href", "https://www.purpleair.com/map?mylocation");
+            x.appendChild(imgs[i]);
+            //div.appendChild(imgs[i]);
+            div.appendChild(x);
             container.appendChild(div);
             
         })
-
-    
 
     </script>
 
